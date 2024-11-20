@@ -3,88 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Senator</title>
+    <title>Ajouter un Nouveau Sénateur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Form container */
         .form-container {
             width: 50%;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #333;
-        }
-
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #45a049;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <h1>Add New Senator</h1>
+    <div class="container mt-5">
+        <div class="card p-4 form-container">
+            <h1 class="text-center">Ajouter un Nouveau Sénateur</h1>
+            <form action="/add-senator" method="POST">
+                <div class="mb-3">
+                    <label for="first-name" class="form-label">Prénom:</label>
+                    <input type="text" id="first-name" name="first_name" class="form-control" required>
+                </div>
 
-        <form action="/add-senator" method="POST">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first_name" required>
+                <div class="mb-3">
+                    <label for="last-name" class="form-label">Nom:</label>
+                    <input type="text" id="last-name" name="last_name" class="form-control" required>
+                </div>
 
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last_name" required>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Genre:</label>
+                    <select id="gender" name="gender" class="form-select" required>
+                        <option value="Male">Homme</option>
+                        <option value="Female">Femme</option>
+                    </select>
+                </div>
 
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Âge:</label>
+                    <input type="number" id="age" name="age" class="form-control" required min="0">
+                </div>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required min="0">
+                <div class="mb-3">
+                    <label for="state" class="form-label">État:</label>
+                    <select id="state" name="state" class="form-select" required>
+                        <option value="Yuu">Yuu</option>
+                        <option value="State 2">State 2</option>
+                        <option value="State 3">State 3</option>
+                        <option value="State 4">State 4</option>
+                        <option value="State 5">State 5</option>
+                        <option value="State 6">State 6</option>
 
-            <label for="state">State:</label>
-            <input type="text" id="state" name="state" value="yuu" readonly>
+                    </select>
+                </div>
 
-            <label for="party">Party:</label>
-            <input type="text" id="party" name="party" value="hell" readonly>
+                <div class="mb-3">
+                    <label for="party" class="form-label">Parti:</label>
+                    <select id="party" name="party" class="form-select" required>
+                        <option value="Hell">Hell</option>
+                        <option value="Parti A">Parti A</option>
+                        <option value="Parti B">Parti B</option>
+                        <option value="Parti C">Parti C</option>
+                        <option value="Parti D">Parti D</option>
+                        <option value="Parti E">Parti E</option>
 
-            <button type="submit">Add Senator</button>
-        </form>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Ajouter Sénateur</button>
+            </form>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -3,54 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New State</title>
+    <title>Ajouter un Nouvel État</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Form container */
         .form-container {
-            width: 50%;
+            max-width: 600px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
         label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
-
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px 20px;
+        .btn-custom {
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            width: 100%;
+            padding: 10px;
         }
-
-        button:hover {
+        .btn-custom:hover {
             background-color: #45a049;
         }
     </style>
@@ -58,30 +38,44 @@
 <body>
 
     <div class="form-container">
-        <h1>Add New State</h1>
+        <h1>Ajouter un Nouvel État</h1>
 
         <form action="/add-state" method="POST">
-            <label for="state-id">State ID:</label>
-            <input type="text" id="state-id" name="state_id" required>
+            <div class="mb-3">
+                <label for="state-id" class="form-label">ID de l'État :</label>
+                <input type="text" id="state-id" name="state_id" class="form-control" required>
+            </div>
 
-            <label for="state-name">State Name:</label>
-            <input type="text" id="state-name" name="state_name" required>
+            <div class="mb-3">
+                <label for="state-name" class="form-label">Nom de l'État :</label>
+                <input type="text" id="state-name" name="state_name" class="form-control" required>
+            </div>
 
-            <label for="flag-id">Flag ID:</label>
-            <input type="text" id="flag-id" name="flag_id" required>
+            <div class="mb-3">
+                <label for="flag-id" class="form-label">ID du Drapeau :</label>
+                <input type="text" id="flag-id" name="flag_id" class="form-control" required>
+            </div>
 
-            <label for="gdp">GDP (in USD):</label>
-            <input type="number" id="gdp" name="gdp" min="0" required>
+            <div class="mb-3">
+                <label for="gdp" class="form-label">PIB (en USD) :</label>
+                <input type="number" id="gdp" name="gdp" class="form-control" min="0" required>
+            </div>
 
-            <label for="area">Area (in sq km):</label>
-            <input type="number" id="area" name="area" min="0" required>
+            <div class="mb-3">
+                <label for="area" class="form-label">Superficie (en km²) :</label>
+                <input type="number" id="area" name="area" class="form-control" min="0" required>
+            </div>
 
-            <label for="population">Population:</label>
-            <input type="number" id="population" name="population" min="0" required>
+            <div class="mb-3">
+                <label for="population" class="form-label">Population :</label>
+                <input type="number" id="population" name="population" class="form-control" min="0" required>
+            </div>
 
-            <button type="submit">Add State</button>
+            <button type="submit" class="btn btn-custom">Ajouter l'État</button>
         </form>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
