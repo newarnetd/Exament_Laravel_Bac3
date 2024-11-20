@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Examen Groupe 1</title>
-        <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -97,26 +96,26 @@
                         @if (Route::has('login'))
                             <nav class="-mx-3 flex flex-1 justify-end">
                                 @auth
-                                    <a
+                                    <a style="font-size: 25px;color:#FFf"
                                         href="{{ url('/dashboard') }}"
                                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
                                         Dashboard
                                     </a>
                                 @else
-                                    <a
+                                    <a style="font-size: 25px;color:#FFf"
                                         href="{{ route('login') }}"
                                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
-                                        Log in
+                                        Se connecter
                                     </a>
 
                                     @if (Route::has('register'))
-                                        <a
+                                        <a style="font-size: 25px;color:#FFf"
                                             href="{{ route('register') }}"
                                             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                         >
-                                            Register
+                                            S'inscrire
                                         </a>
                                     @endif
                                 @endauth
@@ -126,15 +125,15 @@
 
                     <main style="display:flex">
     <div style="width:100%;margin-right:30px">
-        <H2 style="font-size:30px;color:#FFf">Bienvenue sur notre projet Laval !</H2>
+        <H2 style="font-size:35px;color:#FFf;font-weight:bold">Bienvenue sur notre projet Laravel !</H2>
         <P style="color:#FFf;padding-top:20px"> C'est un projet collectif, et nous avons essayé de réaliser quelque chose de moderne. Cependant, le temps ne nous a pas permis de tout perfectionner. Nous sommes le groupe 1, et notre projet est simple à maintenir, facile à utiliser, et relativement fonctionnel. Il est conçu pour gérer les élections présidentielles des États-Unis, avec pour objectif principal de permettre les opérationsCRUD (Créer, Lire, Mettre à jour,  Supprimer).</P>
         </div>
     <div class="swiper mySwiper" style="height:400px;border-radius:5px;hoverflow:hidden">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Jean-luc Kashindi Nestor</div>
-      <div class="swiper-slide">jYTIMAY J</div>
+      <div class="swiper-slide">J. Josue</div>
       <div class="swiper-slide">H. reponse</div>
-      <div class="swiper-slide">Eden K</div>
+      <div class="swiper-slide">Eden. K</div>
       <div class="swiper-slide">Jean-paul</div>
       <div class="swiper-slide">Eric</div>
       <div class="swiper-slide">Sylveuwo</div>
@@ -156,6 +155,32 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="Javascript.js"></script>
+        <script>
+            const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  on: {
+    autoplayTimeLeft(s, time, progress) {
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  }
+});
+
+        </script>
     </body>
 </html>
