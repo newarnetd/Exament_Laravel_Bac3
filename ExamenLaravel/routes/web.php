@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\GovernorController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\PreselectorController;
@@ -33,5 +34,7 @@ Route::get('/governor/add', [GovernorController::class, 'create'])->name('govern
 Route::get('/preselector/add', [PreselectorController::class, 'create'])->name('preselector.add');
 Route::get('/senator/add', [SenatorController::class, 'create'])->name('senator.add');
 Route::get('/party', [PartyController::class, 'index'])->name('party');
-
+Route::get('/governors', [CandidateController::class, 'showGovernors']);
+Route::get('/preselectors', [CandidateController::class, 'showPreselectors']);
+Route::get('/senators', [CandidateController::class, 'showSenators']);
 require __DIR__.'/auth.php';
