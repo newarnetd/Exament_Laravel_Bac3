@@ -14,14 +14,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#statesAdd">StatesAdd</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#governorAdd">GovernorAdd</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#preselectorAdd">PreselectorAdd</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#senatorAdd">SenatorAdd</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#party">Party</a></li>
-                </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('states.add') }}">StatesAdd</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('governor.add') }}">GovernorAdd</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('preselector.add') }}">PreselectorAdd</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('senator.add') }}">SenatorAdd</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('party') }}">Party</a></li>
+            </ul>
+
             </div>
         </div>
     </nav>
